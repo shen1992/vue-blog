@@ -8,6 +8,8 @@
 </template>
 
 <script>
+  import {mapState, mapActions} from 'vuex'
+
   import Side from '../../components/side.vue'
   import Item from '../../components/item.vue'
 
@@ -17,29 +19,23 @@
       Side,
       Item,
     },
+
     data() {
-      console.log('1', this.$route.path);
-      return {
-        isTrue: this.$route.path !== '/detail',
-        items: [
-          '1',
-          '2',
-          '3',
-          '4',
-          '5',
-          '6',
-          '7',
-          '8',
-          '9',
-          '10',
-          '11',
-          '12',
-        ]
-      }
+      return {}
     },
+
+    computed: {
+      ...mapState(['isLogin'])
+    },
+
     methods: {
-      goToDetail: function () {
-        alert('123')
+      ...mapActions(['isUserLogin'])
+    },
+
+    mounted() {
+      if(!this.isLogin) {
+        this.isUserLogin().then(() => console.log(this.isLogin))
+//        this.$router.push({path: '/login'})
       }
     }
   }
@@ -52,6 +48,6 @@
       flex 1
       height 100vh
       background #515457
-      padding 20px
+      padding 20px 20px 0 20px
       overflow scroll
 </style>

@@ -23,9 +23,11 @@
     &_name
       color #fff
       margin-top 10px
+      text-align center
     &_des
       color #fff
       margin-top 5px
+      text-align center
     &_img
       width 128px
       height 128px

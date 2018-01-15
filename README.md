@@ -2,6 +2,8 @@
 
 > A Vue.js project
 
+##### 博客写了一半，了解了vue的基本的用法，后端代码暂时没上，跑不了哦！
+
 ## Build Setup
 
 ``` bash
